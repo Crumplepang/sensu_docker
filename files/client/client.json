@@ -1,0 +1,7 @@
+{
+  "client": {
+    "name": "sensu_client",
+    "address": "client",
+    "bind": "127.0.0.1"
+  }
+}

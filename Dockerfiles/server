@@ -1,0 +1,8 @@
+FROM sensu/base
+
+RUN mkdir /etc/sensu/conf.d/checks
+
+COPY files/server/checks/* /etc/sensu/conf.d/checks
+
+CMD /opt/sensu/embedded/bin/ruby /opt/sensu/bin/sensu-server -c /etc/sensu/config.json -d /etc/sensu/conf.d -e /etc/sensu/extensions -p /var/run/sensu/sensu-server.pid -l /var/log/sensu/sensu-server.log -L info
+

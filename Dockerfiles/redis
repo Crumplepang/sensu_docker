@@ -1,0 +1,11 @@
+FROM ubuntu:xenial
+RUN /usr/bin/apt-get update
+RUN apt-get -y install redis-server
+RUN mkdir /data
+
+COPY files/redis/6379.conf /etc/redis/redis.conf
+
+CMD /usr/bin/redis-server /etc/redis/redis.conf
+
+EXPOSE 6379
+

@@ -1,0 +1,12 @@
+{
+  "transport": {
+    "name": "redis",
+    "reconnect_on_error": true
+  },
+  "redis": {
+    "host": "redis",
+    "port": 6379,
+    "auto_reconnect": true
+  }
+}
+

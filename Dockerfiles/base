@@ -1,0 +1,10 @@
+FROM ubuntu/xenial
+RUN apt-get update
+RUN apt-get install -y wget && apt-get install -y apt-transport-https
+RUN apt-get install -y netcat && apt-get install -y iputils-ping && apt-get install -y redis-tools
+RUN wget -q https://sensu.global.ssl.fastly.net/apt/pubkey.gpg -O- | apt-key add -
+RUN . /etc/os-release && echo "deb     https://sensu.global.ssl.fastly.net/apt $UBUNTU_CODENAME main" | tee /etc/apt/sources.list.d/sensu.list
+RUN apt-get update && apt-get install -y sensu=1.2.1-2
+
+COPY files/transport.json /etc/sensu/conf.d/transport.json
+

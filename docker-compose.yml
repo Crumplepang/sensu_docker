@@ -1,0 +1,23 @@
+version: '2'
+services:
+  redis:
+    build:
+      context: ./
+      dockerfile: ./Dockerfiles/redis
+    ports:
+      - "6379:6379"
+  server:
+    build:
+      context: ./
+      dockerfile: ./Dockerfiles/server
+  api:
+    build:
+      context: ./
+      dockerfile: ./Dockerfiles/api
+    ports:
+      - "4567:4567"
+  client:
+    build:
+      context: ./
+      dockerfile: ./Dockerfiles/client
+    
