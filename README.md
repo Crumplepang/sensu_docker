@@ -17,6 +17,7 @@ Place checks into files/checks/client or files/checks/server
 
 ## Run
 
+    ./cleanup.sh
     docker-compose up --build -d
 
 ## Check
@@ -24,6 +25,8 @@ Place checks into files/checks/client or files/checks/server
     redis-cli -h localhost -p 6379 <<<'keys *'
 
     curl -s localhost:4567/clients | jq
+
+..and browse http://localhost:3000
 
 ## Clean up
 

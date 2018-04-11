@@ -20,4 +20,10 @@ services:
     build:
       context: ./
       dockerfile: ./Dockerfiles/client
+  uchiwa:
+    build:
+      context: ./
+      dockerfile: ./Dockerfiles/uchiwa
+    ports:
+      - "3000:3000"
     

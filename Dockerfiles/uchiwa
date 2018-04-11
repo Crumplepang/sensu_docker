@@ -1,0 +1,9 @@
+FROM sensu/base
+
+RUN apt-get install uchiwa
+
+COPY files/uchiwa/uchiwa.json /etc/sensu/uchiwa.json
+
+CMD su -s /bin/sh uchiwa -c cd /opt/uchiwa/src && exec "/opt/uchiwa/bin/uchiwa" -c /etc/sensu/uchiwa.json -d /etc/sensu/dashboard.d -p /opt/uchiwa/src/public
+
+EXPOSE 3000
