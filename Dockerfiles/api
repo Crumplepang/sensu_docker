@@ -4,5 +4,3 @@ COPY files/api/api.json /etc/sensu/conf.d/api.json
 
 CMD /opt/sensu/embedded/bin/ruby /opt/sensu/bin/sensu-api -c /etc/sensu/config.json -d /etc/sensu/conf.d -e /etc/sensu/extensions -p /var/run/sensu/sensu-api.pid -l /var/log/sensu/sensu-api.log -L info
 
-EXPOSE 4567
-
