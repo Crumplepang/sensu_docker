@@ -8,7 +8,7 @@ Simple Sensu stack on Redis using docker compose
 
 ## Configure
 
-Place checks into files/checks/client or files/checks/server
+files/api, files/server and files/client are mounted as /etc/sensu/conf.d in their respective containers.
 
 ## Build
 
